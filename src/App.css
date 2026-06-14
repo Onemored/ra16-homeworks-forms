@@ -1,0 +1,165 @@
+:root {
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+}
+
+.app {
+  display: grid;
+  min-height: 100vh;
+  padding: 24px;
+  place-items: center;
+  transition: background-color 250ms ease;
+}
+
+.converter {
+  width: min(410px, 100%);
+  padding: 36px;
+  overflow: hidden;
+  background: rgb(15 23 42 / 72%);
+  border: 1px solid rgb(255 255 255 / 18%);
+  border-radius: 24px;
+  box-shadow:
+    0 24px 70px rgb(0 0 0 / 28%),
+    inset 0 1px 0 rgb(255 255 255 / 10%);
+  backdrop-filter: blur(16px);
+}
+
+.converter__header {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.converter__eyebrow {
+  margin: 0 0 8px;
+  color: rgb(255 255 255 / 65%);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.converter__title {
+  margin: 0;
+  font-size: clamp(32px, 8vw, 44px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.converter__title span {
+  color: rgb(255 255 255 / 55%);
+  font-weight: 400;
+}
+
+.converter__description {
+  margin: 14px 0 0;
+  color: rgb(255 255 255 / 75%);
+  font-size: 15px;
+}
+
+.converter__controls {
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 22%);
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgb(0 0 0 / 18%);
+}
+
+.converter__input,
+.converter__result {
+  display: block;
+  width: 100%;
+  min-height: 78px;
+  border: 0;
+  font-weight: 700;
+  text-align: center;
+}
+
+.converter__input {
+  padding: 18px 20px;
+  color: #0f172a;
+  background: #ffffff;
+  font: inherit;
+  font-size: 29px;
+  letter-spacing: 0.16em;
+  outline: 3px solid transparent;
+  outline-offset: -3px;
+  transition: outline-color 150ms ease;
+}
+
+.converter__input:focus {
+  outline-color: #7dd3fc;
+}
+
+.converter__result {
+  padding: 25px 20px;
+  color: #ffffff;
+  background: rgb(2 6 23 / 48%);
+  font-size: 23px;
+  letter-spacing: -0.02em;
+  transition: background-color 200ms ease;
+}
+
+.converter__result--error {
+  background: rgb(127 29 29 / 72%);
+}
+
+.converter__hint {
+  margin: 14px 0 0;
+  color: rgb(255 255 255 / 55%);
+  font-size: 12px;
+  text-align: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding: 16px;
+  }
+
+  .converter {
+    padding: 28px 20px;
+    border-radius: 20px;
+  }
+
+  .converter__input {
+    font-size: 25px;
+  }
+
+  .converter__result {
+    font-size: 21px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app,
+  .converter__input,
+  .converter__result {
+    transition: none;
+  }
+}
